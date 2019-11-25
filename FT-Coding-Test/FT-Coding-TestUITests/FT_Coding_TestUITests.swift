@@ -30,6 +30,13 @@ class FT_Coding_TestUITests: XCTestCase {
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let tablesQuery = XCUIApplication().tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Ritual app for ending the work day inspired by Deep Work"]/*[[".cells.staticTexts[\"Ritual app for ending the work day inspired by Deep Work\"]",".staticTexts[\"Ritual app for ending the work day inspired by Deep Work\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Maslow-kits-Pre-Order-"]/*[[".cells.staticTexts[\"Maslow-kits-Pre-Order-\"]",".staticTexts[\"Maslow-kits-Pre-Order-\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["🐭 An In-browser User Interface For JavaScript Development Workflows"]/*[[".cells.staticTexts[\"🐭 An In-browser User Interface For JavaScript Development Workflows\"]",".staticTexts[\"🐭 An In-browser User Interface For JavaScript Development Workflows\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["The open-source database for the realtime web."]/*[[".cells.staticTexts[\"The open-source database for the realtime web.\"]",".staticTexts[\"The open-source database for the realtime web.\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        
     }
 
     func testLaunchPerformance() {

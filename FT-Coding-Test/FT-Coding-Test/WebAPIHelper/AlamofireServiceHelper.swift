@@ -159,11 +159,12 @@ class AlamofireServiceHelper:NSObject {
     func progressHud(status: Bool) {
            
            DispatchQueue.main.async(execute: {
-            let appDelegate = UIApplication.shared.delegate as? AppDelegate
-            var hud = MBProgressHUD(for: appDelegate!.window ?? UIView())
+            var window: UIWindow?
+           // let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            var hud = MBProgressHUD(for: window ?? UIView())
                if status {
                    if hud == nil {
-                       hud = MBProgressHUD.showAdded(to: appDelegate!.window ?? UIView(), animated: true)
+                       hud = MBProgressHUD.showAdded(to: window ?? UIView(), animated: true)
                    }
                    hud!.layer.cornerRadius = 8.0
                 hud!.bezelView.color = .black
