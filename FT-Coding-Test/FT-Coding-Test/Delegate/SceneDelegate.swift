@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  FT-Coding-Test
 //
-//  Created by Sridhar Agrawal on 25/11/19.
+//  Created by Dashmeet Singh on 25/11/19.
 //  Copyright © 2019 Dashmeet Singh. All rights reserved.
 //
 
