@@ -9,7 +9,8 @@
 import UIKit
 
 class GitTableViewCell: UITableViewCell {
-
+    
+    // Mark :- Outlets
     @IBOutlet weak var repoNameLabel: UILabel!
     @IBOutlet weak var repoDecriptionLabel: UILabel!
     @IBOutlet weak var ownerNameLabel: UILabel!

@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Reachability
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    public var isReachable = false
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.isReachable = self.checkReachablility()
         return true
     }
 
@@ -30,6 +35,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    // Mark :- Method to check internet connectivity
+    func checkReachablility() -> Bool {
+        let reachability = try! Reachability()
+        
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                self.isReachable = true
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+            if reachability.connection == .cellular {
+                self.isReachable = true
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            print("Not reachable")
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        return self.isReachable
     }
 }
 

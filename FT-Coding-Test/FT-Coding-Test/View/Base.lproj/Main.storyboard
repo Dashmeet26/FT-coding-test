@@ -170,6 +170,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Trending" image="star" catalog="system" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="tableView" destination="2hB-ye-To9" id="00r-54-0ve"/>
                         <outlet property="viewManager" destination="a4Z-62-hrL" id="BHa-cB-2QI"/>
                     </connections>
                 </viewController>
