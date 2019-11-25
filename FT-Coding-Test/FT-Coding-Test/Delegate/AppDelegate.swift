@@ -13,6 +13,7 @@ import Reachability
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public var isReachable = false
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -61,6 +62,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try reachability.startNotifier()
         } catch {
             print("Unable to start notifier")
+        }
+        if (!self.isReachable) {
+            let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                    UIAlertAction in
+                    print("OK Pressed")
+                }
+            let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel) {
+                    UIAlertAction in
+                    print("Cancel Pressed")
+                }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
         }
         return self.isReachable
     }

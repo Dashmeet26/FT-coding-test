@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GitTableViewCell" rowHeight="100" id="83Q-wJ-tcn" customClass="GitTableViewCell" customModule="FT_Coding_Test" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GitTableViewCell" rowHeight="100" id="83Q-wJ-tcn" customClass="GitTableViewCell" customModule="FT_Coding_Test" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="83Q-wJ-tcn" id="sUm-fF-p1E">
@@ -140,6 +140,9 @@
                                                 <constraint firstItem="y9P-Qb-ed1" firstAttribute="leading" secondItem="1FU-ca-6Wd" secondAttribute="trailing" constant="5" id="wdO-7h-QDv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="ownerImageView" destination="1FU-ca-6Wd" id="bgQ-rZ-l1u"/>
                                             <outlet property="ownerNameLabel" destination="y9P-Qb-ed1" id="38c-uf-eLq"/>

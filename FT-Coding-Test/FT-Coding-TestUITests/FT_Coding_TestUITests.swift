@@ -22,8 +22,18 @@ class FT_Coding_TestUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testTabNavigation() {
+              // UI tests must launch the application that they test.
+               let app = XCUIApplication()
+               app.launch()
+           
+           let tabBarsQuery = XCUIApplication().tabBars
+           tabBarsQuery.buttons["Settings"].tap()
+           tabBarsQuery.buttons["Trending"].tap()
+       }
 
-    func testExample() {
+    func testTableViewScroll() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
@@ -32,11 +42,9 @@ class FT_Coding_TestUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let tablesQuery = XCUIApplication().tables
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Ritual app for ending the work day inspired by Deep Work"]/*[[".cells.staticTexts[\"Ritual app for ending the work day inspired by Deep Work\"]",".staticTexts[\"Ritual app for ending the work day inspired by Deep Work\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Maslow-kits-Pre-Order-"]/*[[".cells.staticTexts[\"Maslow-kits-Pre-Order-\"]",".staticTexts[\"Maslow-kits-Pre-Order-\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["🐭 An In-browser User Interface For JavaScript Development Workflows"]/*[[".cells.staticTexts[\"🐭 An In-browser User Interface For JavaScript Development Workflows\"]",".staticTexts[\"🐭 An In-browser User Interface For JavaScript Development Workflows\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
-        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["The open-source database for the realtime web."]/*[[".cells.staticTexts[\"The open-source database for the realtime web.\"]",".staticTexts[\"The open-source database for the realtime web.\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
-        
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["faceair"].swipeRight()/*[[".cells.staticTexts[\"faceair\"]",".swipeUp()",".swipeRight()",".staticTexts[\"faceair\"]"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"React-Redux-Styleguide")/*[[".cells.containing(.staticText, identifier:\"iraycd\")",".cells.containing(.staticText, identifier:\"This is a working set of guidelines for developing React applications. We say \\\"guideline\\\" because there are no hard-and-fast rules; best practices, patterns and technology change over time, so we consider this a living set of style guides.\")",".cells.containing(.staticText, identifier:\"React-Redux-Styleguide\")"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.staticTexts["5"].swipeDown()
+               
     }
 
     func testLaunchPerformance() {

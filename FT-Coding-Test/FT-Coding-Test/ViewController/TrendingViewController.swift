@@ -10,7 +10,7 @@
 import UIKit
 import SDWebImage
 
-class TrendingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TrendingViewController: UIViewController {
     
     //Mark :- Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -23,21 +23,6 @@ class TrendingViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         getDetialsApi()
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewManager.numberOfItemsInSection(section: self.gitModel.count)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GitTableViewCell", for: indexPath) as! GitTableViewCell
-        configureCell(cell: cell, forRowAtIndexPath: indexPath as NSIndexPath)
-        return cell
     }
     
     func configureCell(cell: GitTableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -67,3 +52,20 @@ class TrendingViewController: UIViewController, UITableViewDelegate, UITableView
     }
 }
 
+extension TrendingViewController: UITableViewDelegate,UITableViewDataSource {
+
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return viewManager.numberOfItemsInSection(section: self.gitModel.count)
+       }
+       
+       func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+           return UITableView.automaticDimension
+       }
+       
+       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+           
+           let cell = tableView.dequeueReusableCell(withIdentifier: "GitTableViewCell", for: indexPath) as! GitTableViewCell
+           configureCell(cell: cell, forRowAtIndexPath: indexPath as NSIndexPath)
+           return cell
+       }
+}
